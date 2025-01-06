@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription au Gang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        h1, p {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        input, textarea, select {
+            background-color: #333;
+            color: #fff;
+        }
+        button {
+            background-color: #f44336;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+        .terms {
+            display: flex;
+            align-items: center;
+        }
+        .terms input {
+            width: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulaire d'inscription au Gang</h1>
+        <p>Remplissez ce formulaire avec attention. Toutes les informations sont strictement confidentielles.</p>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Clé API Web3Forms -->
+            <input type="hidden" name="access_key" value="9478c1c1-222a-4065-8d09-6c902abe1b79">
+            
+            <!-- Informations Personnelles -->
+            <fieldset>
+                <legend><strong>Informations Personnelles</strong></legend>
+                <label for="name">Nom complet</label>
+                <input type="text" id="name" name="name" placeholder="Entrez votre nom complet" required>
+
+                <label for="alias">Alias (Nom de gang)</label>
+                <input type="text" id="alias" name="alias" placeholder="Entrez votre alias" required>
+
+                <label for="dob">Date de naissance</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="gender">Genre</label>
+                <select id="gender" name="gender" required>
+                    <option value="">--Sélectionnez--</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                    <option value="non-binaire">Non-binaire</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </fieldset>
+
+            <!-- Coordonnées -->
+            <fieldset>
+                <legend><strong>Coordonnées</strong></legend>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+
+                <label for="phone">Numéro de téléphone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" required>
+
+                <label for="address">Adresse</label>
+                <textarea id="address" name="address" rows="3" placeholder="Entrez votre adresse complète" required></textarea>
+            </fieldset>
+
+            <!-- Compétences et Motivations -->
+            <fieldset>
+                <legend><strong>Compétences et Motivations</strong></legend>
+                <label for="skills">Quelles sont vos compétences ?</label>
+                <textarea id="skills" name="skills" rows="4" placeholder="Exemple : conduite, maniement des armes, négociation..." required></textarea>
+
+                <label for="motivation">Pourquoi voulez-vous rejoindre le gang ?</label>
+                <textarea id="motivation" name="motivation" rows="4" placeholder="Expliquez vos motivations" required></textarea>
+
+                <label for="availability">Êtes-vous disponible à temps plein ?</label>
+                <select id="availability" name="availability" required>
+                    <option value="">--Sélectionnez--</option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+            </fieldset>
+
+            <!-- Engagement -->
+            <fieldset>
+                <legend><strong>Engagement</strong></legend>
+                <div class="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Je certifie que les informations fournies sont exactes.</label>
+                </div>
+            </fieldset>
+
+            <!-- Soumission -->
+            <button type="submit">Soumettre l'inscription</button>
+        </form>
+    </div>
+</body>
+</html>
